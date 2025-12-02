@@ -19,57 +19,50 @@ Este projeto consiste em uma API REST desenvolvida com **Java** e **Spring Boot*
 
 #### **Criar Professor (POST)**
 > **Insomnia:**
-> ![Criar Professor](./images/Professor/criarProfessor.png)
->
+![img.png](img.png)> 
 > **Banco de Dados:**
-> ![DB Criar Professor](./images/Professor/criarProfessorDB.png)
-
+![img_2.png](img_2.png)
 #### **Listar Professores (GET)**
 > **Insomnia:**
-> ![Listar Professores](./images/Professor/listarProfessores.png)
-
+![img_3.png](img_3.png)
 #### **Atualizar Professor (PUT)**
 > **Insomnia:**
-> ![Atualizar Professor](./images/Professor/atualizarProfessor.png)
->
+>![img_4.png](img_4.png)
 > **Banco de Dados:**
-> ![DB Atualizar Professor](./images/Professor/atualizarProfessorDB.png)
-
+>![img_5.png](img_5.png)
 #### **Deletar Professor (DELETE)**
 > **Insomnia:**
-> ![Deletar Professor](./images/Professor/deletarProfessor.png)
->
+> ![img_6.png](img_6.png)
 > **Banco de Dados:**
-> ![DB Deletar Professor](./images/Professor/deletarProfessorDB.png)
-
+> ![img_7.png](img_7.png)
 ---
 
 ### 2. 👨‍🎓 Controller: Aluno
 
 #### **Criar Aluno (POST)**
 > **Insomnia:**
-> ![Criar Aluno](./images/Aluno/criarAluno.png)
+> ![img_8.png](img_8.png)
 >
 > **Banco de Dados:**
-> ![DB Criar Aluno](./images/Aluno/criarAlunoDB.png)
+> ![img_9.png](img_9.png)
 
 #### **Listar Alunos (GET)**
 > **Insomnia:**
-> ![Listar Alunos](./images/Aluno/listarAlunos.png)
-
+> ![img_11.png](img_11.png)
+> 
 #### **Atualizar Aluno (PUT)**
 > **Insomnia:**
-> ![Atualizar Aluno](./images/Aluno/atualizarAluno.png)
+> ![img_12.png](img_12.png)
 >
 > **Banco de Dados:**
-> ![DB Atualizar Aluno](./images/Aluno/atualizarAlunoDB.png)
+> ![img_13.png](img_13.png)
 
 #### **Deletar Aluno (DELETE)**
 > **Insomnia:**
-> ![Deletar Aluno](./images/Aluno/deletarAluno.png)
+> ![img_14.png](img_14.png)
 >
 > **Banco de Dados:**
-> ![DB Deletar Aluno](./images/Aluno/deletarAlunoDB.png)
+> ![img_15.png](img_15.png)
 
 ---
 
@@ -77,28 +70,28 @@ Este projeto consiste em uma API REST desenvolvida com **Java** e **Spring Boot*
 
 #### **Criar Disciplina (POST)**
 > **Insomnia:**
-> ![Criar Disciplina](./images/Disciplina/criarDisciplina.png)
+> ![img_17.png](img_17.png)
 >
 > **Banco de Dados:**
-> ![DB Criar Disciplina](./images/Disciplina/criarDisciplinaDB.png)
+> ![img_18.png](img_18.png)
 
 #### **Listar Disciplinas (GET)**
 > **Insomnia:**
-> ![Listar Disciplina](./images/Disciplina/listarDisciplina.png)
+> ![img_19.png](img_19.png)
 
 #### **Atualizar Disciplina (PUT)**
 > **Insomnia:**
-> ![Atualizar Disciplina](./images/Disciplina/AtualizarDisciplina.png)
+> ![img_20.png](img_20.png)
 >
 > **Banco de Dados:**
-> ![DB Atualizar Disciplina](./images/Disciplina/atualizarDisciplinaDB.png)
+> ![img_21.png](img_21.png)
 
 #### **Deletar Disciplina (DELETE)**
 > **Insomnia:**
-> ![Deletar Disciplina](./images/Disciplina/deletarDisciplina.png)
+> ![img_22.png](img_22.png)
 >
 > **Banco de Dados:**
-> ![DB Deletar Disciplina](./images/Disciplina/deletarDisciplinaDB.png)
+> ![img_23.png](img_23.png)
 
 ---
 
@@ -106,21 +99,21 @@ Este projeto consiste em uma API REST desenvolvida com **Java** e **Spring Boot*
 
 #### **Realizar Matrícula (POST)**
 > **Insomnia:**
-> ![Criar Matricula](./images/Matricula/criarMatriculaAluno.png)
+> ![img_24.png](img_24.png)
 >
 > **Banco de Dados:**
-> ![DB Criar Matricula](./images/Matricula/criarMatriculaAlunoDB.png)
+> ![img_25.png](img_25.png)
 
-#### **Atualizar Notas (PUT/PATCH)**
+#### **Atualizar Notas (PATCH)**
 > **Insomnia:**
-> ![Atualizar Notas](./images/Matricula/atualizarNotas.png)
+> ![img_26.png](img_26.png)
 >
 > **Banco de Dados:**
-> ![DB Atualizar Notas](./images/Matricula/atualizarNotasDB.png)
+> ![img_27.png](img_27.png)
 
 #### **Trancar Matrícula (PUT/PATCH)**
 > **Insomnia:**
-> ![Trancar Disciplina](./images/Matricula/trancarDisciplina.png)
+> ![img_28.png](img_28.png)
 >
 > **Banco de Dados:**
-> ![DB Trancar Disciplina](./images/Matricula/trancarDisciplinaDB.png)
+> ![img_29.png](img_29.png)

@@ -1,299 +1,126 @@
 # 🎓 Sistema de Gerenciamento Acadêmico (API Aluno Online)
 
-Este projeto consiste em uma API REST desenvolvida com **Java** e **Spring Boot** para o gerenciamento de uma instituição de ensino. O sistema permite o controle de Alunos, Professores, Disciplinas e o gerenciamento de Matrículas (lançamento de notas e trancamento).
+Este projeto consiste em uma API REST desenvolvida com **Java** e **Spring Boot** para o gerenciamento de uma instituição de ensino.
 
 ## 🛠 Tecnologias Utilizadas
 
 *   **Java 17+**
 *   **Spring Boot** (Web, Data JPA)
-*   **Banco de Dados:** (H2 ou PostgreSQL - *configure conforme seu application.properties*)
+*   **Banco de Dados:** (H2 ou PostgreSQL)
 *   **Lombok**
-*   **DBeaver** (Gerenciamento de Banco de Dados)
-*   **Insomnia** (Testes de API)
+*   **DBeaver**
+*   **Insomnia**
 
 ---
 
-## 📡 Endpoints e Testes (Insomnia & Banco de Dados)
-
-Abaixo estão listadas as requisições para teste da API, acompanhadas dos prints de execução no **Insomnia** e da verificação dos dados no **DBeaver**.
+## 📡 Endpoints e Testes
 
 ### 1. 👨‍🏫 Controller: Professor
 
-Gerenciamento dos docentes da instituição.
-
-#### **1.1 Criar Professor**
-*   **Método:** `POST`
-*   **URL:** `/professor`
-*   **JSON (Body):**
-```json
-{
-  "nome": "Professor Girafales",
-  "email": "girafales@escola.com",
-  "cpf": "123.456.789-00"
-}
-
-Evidência Insomnia:
-
-![alt text](src/main/resources/images/Professor/criarProfessor.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Professor/criarProfessorDB.png)
-
-1.2 Listar Professores
-
-Método: GET
-
-URL: /professor/all
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Professor/listarProfessores.png)
-
-1.3 Atualizar Professor
-
-Método: PUT
-
-URL: /professor/{id}
-
-JSON (Body):
-
-{
-  "nome": "Professor Girafales (Editado)",
-  "email": "girafales.edit@escola.com",
-  "cpf": "123.456.789-00"
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Professor/atualizarProfessor.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Professor/atualizarProfessorDB.png)
-
-1.4 Deletar Professor
-
-Método: DELETE
-
-URL: /professor/{id}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Professor/deletarProfessor.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Professor/deletarProfessorDB.png)
-
-2. 👨‍🎓 Controller: Aluno
-
-Gerenciamento dos discentes.
-
-2.1 Criar Aluno
-
-Método: POST
-
-URL: /aluno
-
-JSON (Body):
-
-{
-  "nomeCompleto": "Chaves do Oito",
-  "email": "chaves@vila.com",
-  "cpf": "999.888.777-66"
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Aluno/criarAluno.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Aluno/criarAlunoDB.png)
-
-2.2 Listar Alunos
-
-Método: GET
-
-URL: /aluno/all
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Aluno/listarAlunos.png)
-
-2.3 Atualizar Aluno
-
-Método: PUT
-
-URL: /aluno/{id}
-
-JSON (Body):
-
-{
-  "nomeCompleto": "Chaves da Silva",
-  "email": "chaves.silva@vila.com",
-  "cpf": "999.888.777-66"
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Aluno/atualizarAluno.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Aluno/atualizarAlunoDB.png)
-
-2.4 Deletar Aluno
-
-Método: DELETE
-
-URL: /aluno/{id}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Aluno/deletarAluno.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Aluno/deletarAlunoDB.png)
-
-3. 📚 Controller: Disciplina
-
-Gerenciamento das matérias e vinculação com professores.
-
-3.1 Criar Disciplina
-
-Método: POST
-
-URL: /disciplinas
-
-JSON (Body):
-
-{
-  "nome": "Matemática",
-  "professor": {
-    "id": 1
-  }
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Disciplina/criarDisciplina.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Disciplina/criarDisciplinaDB.png)
-
-3.2 Listar Disciplinas
-
-Método: GET
-
-URL: /disciplinas/all
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Disciplina/listarDisciplina.png)
-
-3.3 Atualizar Disciplina
-
-Método: PUT
-
-URL: /disciplinas/{id}
-
-JSON (Body):
-
-{
-  "nome": "Matemática Avançada",
-  "professor": {
-    "id": 1
-  }
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Disciplina/AtualizarDisciplina.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Disciplina/atualizarDisciplinaDB.png)
-
-3.4 Deletar Disciplina
-
-Método: DELETE
-
-URL: /disciplinas/{id}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Disciplina/deletarDisciplina.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Disciplina/deletarDisciplinaDB.png)
-
-4. 📝 Controller: Matrícula
-
-Gerenciamento acadêmico, lançamento de notas e trancamentos.
-
-4.1 Realizar Matrícula
-
-Método: POST
-
-URL: /matriculas
-
-JSON (Body):
-
-{
-  "aluno": {
-    "id": 1
-  },
-  "disciplina": {
-    "id": 3
-  }
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Matricula/criarMatriculaAluno.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Matricula/criarMatriculaAlunoDB.png)
-
-4.2 Atualizar Notas
-
-Método: PUT (ou PATCH)
-
-URL: /matriculas/atualizar-notas/{id}
-
-JSON (Body):
-
-{
-	"nota1": 7.0,
-	"nota2": 9.0
-}
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Matricula/atualizarNotas.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Matricula/atualizarNotasDB.png)
-
-4.3 Trancar Matrícula
-
-Método: PUT (ou PATCH)
-
-URL: /matriculas/trancar/{id}
-
-JSON (Body): (Vazio)
-
-Evidência Insomnia:
-
-![alt text](./src/main/resources/images/Matricula/trancarDisciplina.png)
-
-Evidência Banco de Dados:
-
-![alt text](./src/main/resources/images/Matricula/trancarDisciplinaDB.png)
+#### **Criar Professor (POST)**
+> **Insomnia:**
+> ![Criar Professor](./images/Professor/criarProfessor.png)
+>
+> **Banco de Dados:**
+> ![DB Criar Professor](./images/Professor/criarProfessorDB.png)
+
+#### **Listar Professores (GET)**
+> **Insomnia:**
+> ![Listar Professores](./images/Professor/listarProfessores.png)
+
+#### **Atualizar Professor (PUT)**
+> **Insomnia:**
+> ![Atualizar Professor](./images/Professor/atualizarProfessor.png)
+>
+> **Banco de Dados:**
+> ![DB Atualizar Professor](./images/Professor/atualizarProfessorDB.png)
+
+#### **Deletar Professor (DELETE)**
+> **Insomnia:**
+> ![Deletar Professor](./images/Professor/deletarProfessor.png)
+>
+> **Banco de Dados:**
+> ![DB Deletar Professor](./images/Professor/deletarProfessorDB.png)
+
+---
+
+### 2. 👨‍🎓 Controller: Aluno
+
+#### **Criar Aluno (POST)**
+> **Insomnia:**
+> ![Criar Aluno](./images/Aluno/criarAluno.png)
+>
+> **Banco de Dados:**
+> ![DB Criar Aluno](./images/Aluno/criarAlunoDB.png)
+
+#### **Listar Alunos (GET)**
+> **Insomnia:**
+> ![Listar Alunos](./images/Aluno/listarAlunos.png)
+
+#### **Atualizar Aluno (PUT)**
+> **Insomnia:**
+> ![Atualizar Aluno](./images/Aluno/atualizarAluno.png)
+>
+> **Banco de Dados:**
+> ![DB Atualizar Aluno](./images/Aluno/atualizarAlunoDB.png)
+
+#### **Deletar Aluno (DELETE)**
+> **Insomnia:**
+> ![Deletar Aluno](./images/Aluno/deletarAluno.png)
+>
+> **Banco de Dados:**
+> ![DB Deletar Aluno](./images/Aluno/deletarAlunoDB.png)
+
+---
+
+### 3. 📚 Controller: Disciplina
+
+#### **Criar Disciplina (POST)**
+> **Insomnia:**
+> ![Criar Disciplina](./images/Disciplina/criarDisciplina.png)
+>
+> **Banco de Dados:**
+> ![DB Criar Disciplina](./images/Disciplina/criarDisciplinaDB.png)
+
+#### **Listar Disciplinas (GET)**
+> **Insomnia:**
+> ![Listar Disciplina](./images/Disciplina/listarDisciplina.png)
+
+#### **Atualizar Disciplina (PUT)**
+> **Insomnia:**
+> ![Atualizar Disciplina](./images/Disciplina/AtualizarDisciplina.png)
+>
+> **Banco de Dados:**
+> ![DB Atualizar Disciplina](./images/Disciplina/atualizarDisciplinaDB.png)
+
+#### **Deletar Disciplina (DELETE)**
+> **Insomnia:**
+> ![Deletar Disciplina](./images/Disciplina/deletarDisciplina.png)
+>
+> **Banco de Dados:**
+> ![DB Deletar Disciplina](./images/Disciplina/deletarDisciplinaDB.png)
+
+---
+
+### 4. 📝 Controller: Matrícula
+
+#### **Realizar Matrícula (POST)**
+> **Insomnia:**
+> ![Criar Matricula](./images/Matricula/criarMatriculaAluno.png)
+>
+> **Banco de Dados:**
+> ![DB Criar Matricula](./images/Matricula/criarMatriculaAlunoDB.png)
+
+#### **Atualizar Notas (PUT/PATCH)**
+> **Insomnia:**
+> ![Atualizar Notas](./images/Matricula/atualizarNotas.png)
+>
+> **Banco de Dados:**
+> ![DB Atualizar Notas](./images/Matricula/atualizarNotasDB.png)
+
+#### **Trancar Matrícula (PUT/PATCH)**
+> **Insomnia:**
+> ![Trancar Disciplina](./images/Matricula/trancarDisciplina.png)
+>
+> **Banco de Dados:**
+> ![DB Trancar Disciplina](./images/Matricula/trancarDisciplinaDB.png)

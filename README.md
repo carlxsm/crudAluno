@@ -34,7 +34,7 @@ Gerenciamento dos docentes da instituição.
 
 Evidência Insomnia:
 
-![alt text](./src/main/resources/images/Professor/criarProfessor.png)
+![alt text](src/main/resources/images/Professor/criarProfessor.png)
 
 Evidência Banco de Dados:
 
